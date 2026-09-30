@@ -1,6 +1,13 @@
 name: Radar Lite
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "industry/**"
+      - "scripts/radar-lite.mjs"
+      - "scripts/radar-lite/**"
+      - ".github/workflows/radar-lite.yml"
   schedule:
     - cron: "15 23 * * *"
   workflow_dispatch:
