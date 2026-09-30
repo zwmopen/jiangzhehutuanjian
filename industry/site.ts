@@ -24,7 +24,13 @@ export const ABOUT = {
     select: "按客资潜力、搜索/GEO、时效季节、江浙沪相关度、HR决策价值和内容可生产性评分。",
     publish: "目标是每天输出少量 Top 机会，进入既有选题库和内容生产工作流，而不是制造更多信息噪音。",
   },
-  maker: null,
+  maker: null as null | {
+    name: string;
+    greeting: string[];
+    avatarSourceId?: string | null;
+    wechat?: { title: string; note: string };
+    feishu?: { title: string; note: string };
+  },
   copyright: `${SITE.name} 仅用于私人信息整理与内容研究。原始内容版权归各来源所有。需要更正或调整时可通过`,
 } as const;
 
