@@ -2,17 +2,17 @@
   "exportedAt": "2026-09-30",
   "groups": [
     {
-      "key": "region",
+      "key": "company",
       "name": "区域目的地",
       "blurb": "按江浙沪核心城市与周边目的地观察机会"
     },
     {
-      "key": "scene",
+      "key": "field",
       "name": "团建场景",
       "blurb": "按季节、玩法与活动形态寻找内容机会"
     },
     {
-      "key": "decision",
+      "key": "genre",
       "name": "决策问题",
       "blurb": "按HR/行政真正需要解决的问题组织内容"
     }
@@ -21,7 +21,7 @@
     {
       "slug": "hangzhou",
       "name": "杭州及周边",
-      "group": "region",
+      "group": "company",
       "tags": [
         "杭州",
         "桐庐",
@@ -32,7 +32,7 @@
       ],
       "definition": "杭州出发1–3小时企业团建、周边游与场地路线机会。",
       "related": [
-        "zhejiang-outdoor",
+        "camping-hiking",
         "two-day-one-night",
         "budget"
       ]
@@ -40,7 +40,7 @@
     {
       "slug": "shanghai",
       "name": "上海",
-      "group": "region",
+      "group": "company",
       "tags": [
         "上海"
       ],
@@ -54,7 +54,7 @@
     {
       "slug": "suzhou",
       "name": "苏州及太湖",
-      "group": "region",
+      "group": "company",
       "tags": [
         "苏州",
         "西山岛"
@@ -69,7 +69,7 @@
     {
       "slug": "ningbo-zhoushan",
       "name": "宁波·舟山",
-      "group": "region",
+      "group": "company",
       "tags": [
         "宁波",
         "舟山",
@@ -86,7 +86,7 @@
     {
       "slug": "huzhou-anji",
       "name": "湖州·安吉·莫干山",
-      "group": "region",
+      "group": "company",
       "tags": [
         "湖州",
         "安吉",
@@ -102,7 +102,7 @@
     {
       "slug": "jinhua-yiwu",
       "name": "金华·义乌",
-      "group": "region",
+      "group": "company",
       "tags": [
         "金华",
         "义乌"
@@ -117,7 +117,7 @@
     {
       "slug": "jiangsu-south",
       "name": "无锡·常州·南京·溧阳",
-      "group": "region",
+      "group": "company",
       "tags": [
         "无锡",
         "常州",
@@ -126,7 +126,7 @@
       ],
       "definition": "苏南及南京方向温泉、山野、度假与企业团建机会。",
       "related": [
-        "hot-spring",
+        "party-hot-spring",
         "two-day-one-night",
         "meeting-retreat"
       ]
@@ -134,21 +134,21 @@
     {
       "slug": "seasonal",
       "name": "季节窗口",
-      "group": "scene",
+      "group": "field",
       "tags": [
         "交通/天气"
       ],
       "definition": "春游、玩水、赏秋、冬季与极端天气对团建选择的影响。",
       "related": [
         "weather-backup",
-        "outdoor",
+        "camping-hiking",
         "annual-meeting"
       ]
     },
     {
       "slug": "camping-hiking",
       "name": "露营·徒步·山野",
-      "group": "scene",
+      "group": "field",
       "tags": [
         "露营",
         "徒步"
@@ -163,7 +163,7 @@
     {
       "slug": "island-water",
       "name": "海岛·玩水·漂流",
-      "group": "scene",
+      "group": "field",
       "tags": [
         "海岛",
         "玩水",
@@ -179,7 +179,7 @@
     {
       "slug": "sports-games",
       "name": "趣味运动·飞盘·骑行",
-      "group": "scene",
+      "group": "field",
       "tags": [
         "飞盘",
         "骑行",
@@ -190,13 +190,13 @@
       "related": [
         "one-day",
         "large-team",
-        "outdoor"
+        "camping-hiking"
       ]
     },
     {
       "slug": "party-hot-spring",
       "name": "轰趴·温泉·室内",
-      "group": "scene",
+      "group": "field",
       "tags": [
         "轰趴",
         "温泉",
@@ -212,7 +212,7 @@
     {
       "slug": "annual-meeting",
       "name": "年会团建",
-      "group": "scene",
+      "group": "field",
       "tags": [
         "年会",
         "会议团建"
@@ -227,7 +227,7 @@
     {
       "slug": "meeting-retreat",
       "name": "会议+团建",
-      "group": "scene",
+      "group": "field",
       "tags": [
         "会议团建",
         "会议室"
@@ -242,7 +242,7 @@
     {
       "slug": "one-day",
       "name": "一日团建",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "1日"
       ],
@@ -256,7 +256,7 @@
     {
       "slug": "two-day-one-night",
       "name": "2天1夜",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "2天1夜"
       ],
@@ -270,7 +270,7 @@
     {
       "slug": "small-team",
       "name": "10–20人",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "10-20人"
       ],
@@ -283,7 +283,7 @@
     {
       "slug": "mid-team",
       "name": "20–50人",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "20-50人"
       ],
@@ -297,7 +297,7 @@
     {
       "slug": "large-team",
       "name": "50人以上",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "50-100人",
         "100人以上"
@@ -312,7 +312,7 @@
     {
       "slug": "budget",
       "name": "预算与性价比",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "预算",
         "预算/人数"
@@ -327,7 +327,7 @@
     {
       "slug": "transport",
       "name": "交通·大巴·停车",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "交通",
         "停车大巴"
@@ -342,7 +342,7 @@
     {
       "slug": "accommodation",
       "name": "住宿·餐饮·会议室",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "住宿",
         "餐饮",
@@ -358,7 +358,7 @@
     {
       "slug": "weather-backup",
       "name": "天气与雨天备选",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "雨天备选",
         "交通/天气"
@@ -373,7 +373,7 @@
     {
       "slug": "search-geo",
       "name": "搜索/GEO问题库",
-      "group": "decision",
+      "group": "genre",
       "tags": [
         "搜索/GEO",
         "趋势/需求"
