@@ -10,6 +10,9 @@
         "allowUrlPrefixes": [
           "https://ct.zj.gov.cn/art/"
         ],
+        "detail": {
+          "maxFetches": 20
+        },
         "_aihot": {
           "initialBackfillLimit": 20
         }
@@ -35,6 +38,9 @@
         "allowUrlPrefixes": [
           "https://whlyj.sh.gov.cn/wlyw/"
         ],
+        "detail": {
+          "maxFetches": 20
+        },
         "_aihot": {
           "initialBackfillLimit": 20
         }
@@ -60,6 +66,9 @@
         "allowUrlPrefixes": [
           "https://whlyj.sh.gov.cn/gzfw/wlzx/"
         ],
+        "detail": {
+          "maxFetches": 12
+        },
         "_aihot": {
           "initialBackfillLimit": 12
         }
@@ -86,6 +95,9 @@
         "allowUrlPrefixes": [
           "https://wglj.suzhou.gov.cn/szwhgdhlyj/wlyw/"
         ],
+        "detail": {
+          "maxFetches": 20
+        },
         "_aihot": {
           "initialBackfillLimit": 20
         }
@@ -111,6 +123,9 @@
         "allowUrlPrefixes": [
           "https://wglj.suzhou.gov.cn/szwhgdhlyj/hdxx/"
         ],
+        "detail": {
+          "maxFetches": 20
+        },
         "_aihot": {
           "initialBackfillLimit": 20
         }
