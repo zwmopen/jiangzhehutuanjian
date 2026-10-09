@@ -1,13 +1,277 @@
 {
   "meta": {
-    "generatedAt": "2026-10-09T09:32:45+08:00",
+    "generatedAt": "2026-10-09T09:33:35+08:00",
     "sourceCount": 6,
-    "candidateCount": 50,
+    "candidateCount": 59,
+    "liveCandidateCount": 50,
+    "demandSeedCount": 9,
     "topThreshold": 55
   },
   "mode": "rules-v2",
-  "top5": [],
+  "top5": [
+    {
+      "id": "demand-q4-hangzhou-annual",
+      "url": "",
+      "title": "杭州年会+团建开始前置：会议、餐饮、住宿、活动怎么一起选",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "杭州"
+      ],
+      "excerpt": "",
+      "heuristicScore": 78,
+      "score": 78,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "年会团建 / 决策清单",
+      "decision": "解决Q4企业年会场地与团建组合的前置筛选",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
+    {
+      "id": "demand-q4-shanghai-suzhou-annual",
+      "url": "",
+      "title": "上海/苏州50人以上年会团建：场地容量、会议室、餐饮先看什么",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "上海",
+        "苏州"
+      ],
+      "excerpt": "",
+      "heuristicScore": 76,
+      "score": 76,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "大团队 / 年会场地",
+      "decision": "解决50人以上团队选场地时的容量与配套判断",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    }
+  ],
   "candidates": [
+    {
+      "id": "demand-q4-hangzhou-annual",
+      "url": "",
+      "title": "杭州年会+团建开始前置：会议、餐饮、住宿、活动怎么一起选",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "杭州"
+      ],
+      "excerpt": "",
+      "heuristicScore": 78,
+      "score": 78,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "年会团建 / 决策清单",
+      "decision": "解决Q4企业年会场地与团建组合的前置筛选",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
+    {
+      "id": "demand-q4-shanghai-suzhou-annual",
+      "url": "",
+      "title": "上海/苏州50人以上年会团建：场地容量、会议室、餐饮先看什么",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "上海",
+        "苏州"
+      ],
+      "excerpt": "",
+      "heuristicScore": 76,
+      "score": 76,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "大团队 / 年会场地",
+      "decision": "解决50人以上团队选场地时的容量与配套判断",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
+    {
+      "id": "demand-autumn-anji-moganshan",
+      "url": "",
+      "title": "安吉/莫干山秋季团建：一日还是2天1夜，住宿和户外怎么搭",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "安吉",
+        "莫干山",
+        "湖州"
+      ],
+      "excerpt": "",
+      "heuristicScore": 74,
+      "score": 74,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "目的地对比 / 2天1夜",
+      "decision": "解决HR在天数、住宿、户外项目之间的组合决策",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
+    {
+      "id": "demand-autumn-hz-outdoor",
+      "url": "",
+      "title": "杭州及周边20–50人秋季团建：徒步、露营、轻户外怎么选",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "杭州",
+        "临安",
+        "富阳",
+        "青山湖"
+      ],
+      "excerpt": "",
+      "heuristicScore": 72,
+      "score": 72,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "秋季玩法 / 人数方案",
+      "decision": "解决20–50人团队秋季一日活动的玩法与目的地选择",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
+    {
+      "id": "demand-autumn-tonglu",
+      "url": "",
+      "title": "桐庐秋季团建：20–50人一日与2天1夜路线怎么拆",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "桐庐",
+        "杭州"
+      ],
+      "excerpt": "",
+      "heuristicScore": 71,
+      "score": 71,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "路线方案 / 天数选择",
+      "decision": "解决团队人数与行程时长的路线选择",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
+    {
+      "id": "demand-large-team",
+      "url": "",
+      "title": "100人以上团建先看什么：大巴、停车、分组、餐饮和会议容量",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "江浙沪"
+      ],
+      "excerpt": "",
+      "heuristicScore": 68,
+      "score": 68,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "大团队 / 执行清单",
+      "decision": "解决大团队最容易踩坑的容量与交通组织问题",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
+    {
+      "id": "demand-two-day-one-night",
+      "url": "",
+      "title": "江浙沪2天1夜团建：住宿、会议、餐饮、活动怎么避免互相打架",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "江浙沪"
+      ],
+      "excerpt": "",
+      "heuristicScore": 66,
+      "score": 66,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "2天1夜 / 组织避坑",
+      "decision": "解决两天一夜方案中住宿、会议、餐饮和活动的组合问题",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
+    {
+      "id": "demand-rain-backup",
+      "url": "",
+      "title": "江浙沪公司团建遇到下雨：室内备选和原路线怎么提前做双方案",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "江浙沪"
+      ],
+      "excerpt": "",
+      "heuristicScore": 65,
+      "score": 65,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "雨天备选 / 风险清单",
+      "decision": "解决天气变化导致户外方案失效的问题",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
+    {
+      "id": "demand-small-team",
+      "url": "",
+      "title": "10–20人小团队团建：包场、轰趴、轻户外分别适合什么场景",
+      "publishedAt": null,
+      "sourceId": "demand-seed",
+      "sourceName": "长期需求池·季节窗口",
+      "tier": "internal",
+      "sourceTags": [
+        "长期需求",
+        "季节窗口",
+        "江浙沪"
+      ],
+      "excerpt": "",
+      "heuristicScore": 62,
+      "score": 62,
+      "reason": "长期高价值问题 · 当前月份进入生产窗口",
+      "angle": "小团队 / 场景选择",
+      "decision": "解决小团队人数不大时的场地与玩法匹配",
+      "strongSignal": true,
+      "noise": 0,
+      "signalType": "demand"
+    },
     {
       "id": "a1181b1183da",
       "url": "https://wglj.suzhou.gov.cn/szwhgdhlyj/hdxx/202609/bdc442a3477f42358986819d5cf67535.shtml",
@@ -28,7 +292,8 @@
       "angle": "决策清单 / 执行变化",
       "decision": "影响日期选择、场地可用性与预约安排",
       "strongSignal": true,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "0f5da69435ba",
@@ -49,7 +314,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "be067465e9cf",
@@ -71,7 +337,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "影响日期选择、场地可用性与预约安排",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "358da1a36e50",
@@ -92,7 +359,8 @@
       "angle": "季节玩法 / 目的地选择",
       "decision": "先作为选题信号观察",
       "strongSignal": true,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "f4e88374685b",
@@ -114,7 +382,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "5c7fbcc1f78d",
@@ -136,7 +405,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "570e8521926d",
@@ -158,7 +428,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "1bef40934fc9",
@@ -179,7 +450,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "ef3f887e5c4d",
@@ -200,7 +472,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "faa18e3c88a5",
@@ -222,7 +495,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 2
+      "noise": 2,
+      "signalType": "live"
     },
     {
       "id": "fcd283604182",
@@ -243,7 +517,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "可转成路线、玩法或目的地选择内容",
       "strongSignal": false,
-      "noise": 2
+      "noise": 2,
+      "signalType": "live"
     },
     {
       "id": "38c5a0ca35ba",
@@ -264,7 +539,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "a0f0a1054099",
@@ -285,7 +561,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "369d270c5562",
@@ -307,7 +584,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "834d6ee886ef",
@@ -329,7 +607,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "可作为近期需求变化的验证信号",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "421fb0732d53",
@@ -350,7 +629,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "1e269fb0e01a",
@@ -371,7 +651,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "2b9352fcebcb",
@@ -393,7 +674,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "f338c56bf4c9",
@@ -414,7 +696,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "fd99193c4516",
@@ -435,7 +718,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     },
     {
       "id": "1c2479fec91c",
@@ -456,71 +740,8 @@
       "angle": "观察 / 暂不优先生产",
       "decision": "先作为选题信号观察",
       "strongSignal": false,
-      "noise": 0
-    },
-    {
-      "id": "3735975d84bb",
-      "url": "https://whlyj.sh.gov.cn/wlyw/20260702/9234642631894f14b4c9cf37a2d03884.html",
-      "title": "第37届上海旅游节正式发布全新品牌形象",
-      "publishedAt": "2026-07-01T16:00:00.000Z",
-      "sourceId": "web-shanghai-wlyw",
-      "sourceName": "上海市文化和旅游局·文旅要闻",
-      "tier": "T1",
-      "sourceTags": [
-        "官方",
-        "上海"
-      ],
-      "excerpt": "文旅要闻",
-      "heuristicScore": 18,
-      "score": 18,
-      "reason": "地域：上海",
-      "angle": "观察 / 暂不优先生产",
-      "decision": "先作为选题信号观察",
-      "strongSignal": false,
-      "noise": 0
-    },
-    {
-      "id": "b221d37ab922",
-      "url": "https://whlyj.sh.gov.cn/wlyw/20260622/5c024f711d444c71bad2323e0c47496d.html",
-      "title": "第31届上海电视节今日开幕",
-      "publishedAt": "2026-07-01T16:00:00.000Z",
-      "sourceId": "web-shanghai-wlyw",
-      "sourceName": "上海市文化和旅游局·文旅要闻",
-      "tier": "T1",
-      "sourceTags": [
-        "官方",
-        "上海"
-      ],
-      "excerpt": "文旅要闻",
-      "heuristicScore": 18,
-      "score": 18,
-      "reason": "地域：上海",
-      "angle": "观察 / 暂不优先生产",
-      "decision": "先作为选题信号观察",
-      "strongSignal": false,
-      "noise": 0
-    },
-    {
-      "id": "417545bd0a9e",
-      "url": "https://whlyj.sh.gov.cn/gzfw/wlzx/20260531/c6347b47332249a5a73c8e35e50f98ad.html",
-      "title": "乐游上海文旅资讯2026年6月推荐",
-      "publishedAt": "2026-06-29T16:00:00.000Z",
-      "sourceId": "web-shanghai-guide",
-      "sourceName": "上海市文化和旅游局·文旅资讯",
-      "tier": "T1",
-      "sourceTags": [
-        "官方",
-        "上海",
-        "文旅资讯"
-      ],
-      "excerpt": "文旅资讯",
-      "heuristicScore": 18,
-      "score": 18,
-      "reason": "地域：上海",
-      "angle": "观察 / 暂不优先生产",
-      "decision": "先作为选题信号观察",
-      "strongSignal": false,
-      "noise": 0
+      "noise": 0,
+      "signalType": "live"
     }
   ],
   "sources": [
@@ -560,7 +781,7 @@
       "name": "江苏省文化和旅游厅",
       "ok": false,
       "count": 0,
-      "error": "HTTP 521"
+      "error": "fetch failed"
     }
   ]
 }
