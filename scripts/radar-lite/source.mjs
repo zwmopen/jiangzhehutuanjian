@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 
-const UA = 'JZHTeamRadarLite/0.1';
+const UA = 'JZHTeamRadarLite/0.2';
 const MAX_PER_SOURCE = 16;
 
 function decodeEntities(s) {
@@ -16,6 +16,14 @@ export function cleanText(s) {
     .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ').trim();
+}
+
+function cleanMarkdown(s) {
+  return decodeEntities(String(s || ''))
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/[#>*_`~|-]+/g, ' ')
     .replace(/\s+/g, ' ').trim();
 }
 
@@ -50,11 +58,19 @@ function parseDate(text) {
 
 export async function fetchText(url, timeoutMs) {
   const res = await fetch(url, {
-    headers: { 'user-agent': UA, accept: 'text/html,application/xhtml+xml,*/*;q=0.8' },
+    headers: { 'user-agent': UA, accept: 'text/html,application/xhtml+xml,text/plain,*/*;q=0.8' },
     signal: AbortSignal.timeout(timeoutMs || 20000), redirect: 'follow'
   });
   if (!res.ok) throw new Error('HTTP ' + res.status);
   return await res.text();
+}
+
+function makeCandidate(url, title, date, source) {
+  return {
+    id: crypto.createHash('sha1').update(url).digest('hex').slice(0, 12), url, title,
+    publishedAt: date ? date.toISOString() : null, sourceId: source.id, sourceName: source.name,
+    tier: source.tier || 'T2', sourceTags: source.tags || [], excerpt: ''
+  };
 }
 
 export function parseListing(html, source) {
@@ -71,19 +87,53 @@ export function parseListing(html, source) {
     const around = cleanText(html.slice(Math.max(0, m.index - 180), Math.min(html.length, re.lastIndex + 180)));
     const date = parseDate(around);
     seen.add(url);
-    out.push({
-      id: crypto.createHash('sha1').update(url).digest('hex').slice(0, 12), url, title,
-      publishedAt: date ? date.toISOString() : null, sourceId: source.id, sourceName: source.name,
-      tier: source.tier || 'T2', sourceTags: source.tags || [], excerpt: ''
-    });
+    out.push(makeCandidate(url, title, date, source));
     if (out.length >= MAX_PER_SOURCE) break;
   }
   return out;
 }
 
+export function parseMarkdownListing(md, source) {
+  const out = [];
+  const seen = new Set();
+  const re = /\[([^\]]{6,220})\]\((https?:\/\/[^)\s]+|\/[^)\s]+)(?:\s+"[^"]*")?\)/g;
+  let m;
+  while ((m = re.exec(md))) {
+    const url = absUrl(m[2], source.config.url);
+    if (!url || seen.has(url) || !allowed(url, source.config)) continue;
+    const title = cleanMarkdown(m[1]);
+    if (title.length < 6 || title.length > 180) continue;
+    const around = cleanMarkdown(md.slice(Math.max(0, m.index - 180), Math.min(md.length, re.lastIndex + 180)));
+    const date = parseDate(around);
+    seen.add(url);
+    out.push(makeCandidate(url, title, date, source));
+    if (out.length >= MAX_PER_SOURCE) break;
+  }
+  return out;
+}
+
+export async function fetchListing(source) {
+  try {
+    const html = await fetchText(source.config.url, 16000);
+    const items = parseListing(html, source);
+    if (items.length) return { items, via:'direct' };
+    throw new Error('no matching links');
+  } catch (directError) {
+    try {
+      const proxyUrl = 'https://r.jina.ai/' + source.config.url;
+      const md = await fetchText(proxyUrl, 22000);
+      const items = parseMarkdownListing(md, source);
+      if (!items.length) throw new Error('proxy returned no matching links');
+      return { items, via:'jina' };
+    } catch (proxyError) {
+      throw new Error('direct=' + String(directError && directError.message || directError) + '; fallback=' + String(proxyError && proxyError.message || proxyError));
+    }
+  }
+}
+
 export async function enrichItem(item) {
   try {
-    const html = await fetchText(item.url, 18000);
+    const html = await fetchText(item.url, 16000);
     const d1 = /<meta\b[^>]*(?:name|property)=["'](?:description|og:description)["'][^>]*content=["']([^"']+)["'][^>]*>/i.exec(html);
     const d2 = /<meta\b[^>]*content=["']([^"']+)["'][^>]*(?:name|property)=["'](?:description|og:description)["'][^>]*>/i.exec(html);
     const dateMeta = /(?:datePublished|article:published_time)["']?\s*(?:content=|:)\s*["']([^"']+)/i.exec(html)?.[1] || '';
@@ -93,8 +143,19 @@ export async function enrichItem(item) {
       publishedAt: date && !Number.isNaN(date.getTime()) ? date.toISOString() : item.publishedAt,
       excerpt: cleanText((d1 && d1[1]) || (d2 && d2[1]) || '') || body.slice(0, 2200)
     });
-  } catch (error) {
-    return Object.assign({}, item, { fetchError: String(error && error.message || error) });
+  } catch (directError) {
+    try {
+      const md = await fetchText('https://r.jina.ai/' + item.url, 22000);
+      const body = cleanMarkdown(md);
+      const date = item.publishedAt ? new Date(item.publishedAt) : parseDate(body.slice(0, 1600));
+      return Object.assign({}, item, {
+        publishedAt: date && !Number.isNaN(date.getTime()) ? date.toISOString() : item.publishedAt,
+        excerpt: body.slice(0, 2200),
+        detailVia:'jina'
+      });
+    } catch (fallbackError) {
+      return Object.assign({}, item, { fetchError: String(directError && directError.message || directError) + '; fallback=' + String(fallbackError && fallbackError.message || fallbackError) });
+    }
   }
 }
 
