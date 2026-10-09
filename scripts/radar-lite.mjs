@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fetchText, parseListing, enrichItem, mapLimit } from './radar-lite/source.mjs';
+import { fetchListing, enrichItem, mapLimit } from './radar-lite/source.mjs';
 import { scoreHeuristic, aiRerank } from './radar-lite/score.mjs';
 import { renderHtml } from './radar-lite/render.mjs';
 
@@ -8,7 +8,8 @@ const ROOT = process.cwd();
 const MAX_DETAILS = 54;
 const TOP_N = 5;
 const MIN_TOP_SCORE = 55;
-const MAX_PER_SOURCE_IN_TOP = 2;
+const MAX_PER_LIVE_SOURCE_IN_TOP = 2;
+const MAX_DEMAND_IN_TOP = 3;
 
 function currentMonthShanghai() {
   return Number(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Shanghai',month:'numeric'}).format(new Date()));
@@ -44,7 +45,8 @@ function pickTop(items) {
   for (const x of items) {
     if (x.score < MIN_TOP_SCORE) continue;
     const count = sourceCounts.get(x.sourceId) || 0;
-    if (count >= MAX_PER_SOURCE_IN_TOP) continue;
+    const limit = x.sourceId === 'demand-seed' ? MAX_DEMAND_IN_TOP : MAX_PER_LIVE_SOURCE_IN_TOP;
+    if (count >= limit) continue;
     picked.push(x);
     sourceCounts.set(x.sourceId, count + 1);
     if (picked.length >= TOP_N) break;
@@ -59,12 +61,12 @@ async function main() {
   const status = [], all = [];
   for (const source of sources) {
     try {
-      const html = await fetchText(source.config.url);
-      const items = parseListing(html, source);
-      status.push({id:source.id,name:source.name,ok:true,count:items.length});
+      const result = await fetchListing(source);
+      const items = result.items;
+      status.push({id:source.id,name:source.name,ok:true,count:items.length,via:result.via});
       all.push.apply(all, items);
     } catch (error) {
-      status.push({id:source.id,name:source.name,ok:false,count:0,error:String(error && error.message || error).slice(0,160)});
+      status.push({id:source.id,name:source.name,ok:false,count:0,error:String(error && error.message || error).slice(0,220)});
     }
   }
   const unique = Array.from(new Map(all.map(function (x) { return [x.url,x]; })).values()).sort(function (a,b) { return (b.publishedAt ? Date.parse(b.publishedAt):0) - (a.publishedAt ? Date.parse(a.publishedAt):0); });
