@@ -1,20 +1,20 @@
 {
-  "$comment": "V0.1 只接稳定官方公开页面。先验证产出，不追求数量；小红书/抖音同行和真实客资需求后续通过 external/自有采集接入。",
+  "$comment": "V0.2：官方事实层先求可执行性，不求数量。已移除持续抓取失败的浙江省厅首页，加入杭州与江苏官方入口；真实客资/搜索/同行层后续通过 external 或独立采集接入。",
   "sources": [
     {
-      "id": "web-zhejiang-ct",
-      "name": "浙江省文化广电和旅游厅",
+      "id": "web-hangzhou-wgly",
+      "name": "杭州市文化广电旅游局",
       "kind": "web_list",
       "config": {
-        "url": "https://ct.zj.gov.cn/",
+        "url": "https://wgly.hangzhou.gov.cn/",
         "allowUrlPrefixes": [
-          "https://ct.zj.gov.cn/art/"
+          "https://wgly.hangzhou.gov.cn/art/"
         ],
         "detail": {
-          "maxFetches": 20
+          "maxFetches": 16
         },
         "_aihot": {
-          "initialBackfillLimit": 20
+          "initialBackfillLimit": 16
         }
       },
       "tier": "T1",
@@ -24,6 +24,7 @@
       "interval_minutes": 180,
       "tags": [
         "官方",
+        "杭州",
         "浙江"
       ],
       "site_fulltext": false,
@@ -39,17 +40,17 @@
           "https://whlyj.sh.gov.cn/wlyw/"
         ],
         "detail": {
-          "maxFetches": 20
+          "maxFetches": 16
         },
         "_aihot": {
-          "initialBackfillLimit": 20
+          "initialBackfillLimit": 16
         }
       },
       "tier": "T1",
       "first_party": true,
       "owner_entity_id": null,
       "participation_mode": "editorial",
-      "interval_minutes": 120,
+      "interval_minutes": 180,
       "tags": [
         "官方",
         "上海"
@@ -67,49 +68,21 @@
           "https://whlyj.sh.gov.cn/gzfw/wlzx/"
         ],
         "detail": {
-          "maxFetches": 12
+          "maxFetches": 16
         },
         "_aihot": {
-          "initialBackfillLimit": 12
+          "initialBackfillLimit": 16
         }
       },
       "tier": "T1",
       "first_party": true,
       "owner_entity_id": null,
       "participation_mode": "editorial",
-      "interval_minutes": 360,
+      "interval_minutes": 240,
       "tags": [
         "官方",
         "上海",
-        "月度推荐"
-      ],
-      "site_fulltext": false,
-      "syndicate_fulltext": false
-    },
-    {
-      "id": "web-suzhou-news",
-      "name": "苏州市文化广电和旅游局·文旅要闻",
-      "kind": "web_list",
-      "config": {
-        "url": "https://wglj.suzhou.gov.cn/szwhgdhlyj/wlyw/list.shtml",
-        "allowUrlPrefixes": [
-          "https://wglj.suzhou.gov.cn/szwhgdhlyj/wlyw/"
-        ],
-        "detail": {
-          "maxFetches": 20
-        },
-        "_aihot": {
-          "initialBackfillLimit": 20
-        }
-      },
-      "tier": "T1",
-      "first_party": true,
-      "owner_entity_id": null,
-      "participation_mode": "editorial",
-      "interval_minutes": 180,
-      "tags": [
-        "官方",
-        "苏州"
+        "文旅资讯"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -124,10 +97,10 @@
           "https://wglj.suzhou.gov.cn/szwhgdhlyj/hdxx/"
         ],
         "detail": {
-          "maxFetches": 20
+          "maxFetches": 16
         },
         "_aihot": {
-          "initialBackfillLimit": 20
+          "initialBackfillLimit": 16
         }
       },
       "tier": "T1",
@@ -139,6 +112,62 @@
         "官方",
         "苏州",
         "活动"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "web-suzhou-news",
+      "name": "苏州市文化广电和旅游局·文旅要闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://wglj.suzhou.gov.cn/szwhgdhlyj/wlyw/list.shtml",
+        "allowUrlPrefixes": [
+          "https://wglj.suzhou.gov.cn/szwhgdhlyj/wlyw/"
+        ],
+        "detail": {
+          "maxFetches": 12
+        },
+        "_aihot": {
+          "initialBackfillLimit": 12
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "苏州"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "web-jiangsu-wlt",
+      "name": "江苏省文化和旅游厅",
+      "kind": "web_list",
+      "config": {
+        "url": "https://wlt.jiangsu.gov.cn/col/col837/index.html",
+        "allowUrlPrefixes": [
+          "https://wlt.jiangsu.gov.cn/art/"
+        ],
+        "detail": {
+          "maxFetches": 16
+        },
+        "_aihot": {
+          "initialBackfillLimit": 16
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "江苏"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
